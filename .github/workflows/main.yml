@@ -34,4 +34,4 @@ jobs:
     - name: Sync to S3
       id: sync-s3
       run: |
-        aws s3 sync . s3://${{ env.AWS_CFN_BUCKET }}/${{ env.AWS_BUCKET_PREFIX }} --region ${{ env.AWS_DEFAULT_REGION }}
+        aws s3 sync ${{ env.CFN_DIR }} s3://${{ env.AWS_CFN_BUCKET }}/${{ env.AWS_BUCKET_PREFIX }} --region ${{ env.AWS_DEFAULT_REGION }}
